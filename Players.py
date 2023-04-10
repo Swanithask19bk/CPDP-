@@ -13,7 +13,7 @@ from Try_laser import Laser
 class Players(pygame.sprite.Sprite):
 	def __init__(self,pos,constraint,speed):
 		super().__init__()
-		self.image = pygame.image.load(r'C:\Users\Shanpoo\Desktop\3rd Semester\CPDP\Games\Test-Pooja\player1.png').convert_alpha()
+		self.image = pygame.image.load('../Images/player1.png').convert_alpha()
 		# C:\Users\Shanpoo\Desktop\3rd Semester\CPDP\Games\Test-Pooja
 		self.rect = self.image.get_rect(midbottom = pos)
 		self.speed = speed
@@ -24,7 +24,7 @@ class Players(pygame.sprite.Sprite):
 
 		self.lasers = pygame.sprite.Group()
 
-		self.laser_sound = pygame.mixer.Sound(r'C:\Users\Shanpoo\Desktop\3rd Semester\CPDP\Games\Test-Pooja\Space-invaders-main\audio\laser.wav')
+		self.laser_sound = pygame.mixer.Sound('../Audio/laser.wav')
 		# C:\Users\Shanpoo\Desktop\3rd Semester\CPDP\Games\Test-Pooja\Space-invaders-main\audio
 		self.laser_sound.set_volume(0.5)
 
