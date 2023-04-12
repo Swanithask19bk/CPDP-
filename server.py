@@ -5,6 +5,7 @@ import sys
 # Server and Port Details
 server = "10.136.226.70"  # replace this with you local IP address.
 port = 5555
+player_count=0;
 
 # Creating Socket
 sock = socket.socket(socket.AF_INET,socket.SOCK_STREAM)
@@ -29,6 +30,7 @@ def player_client(connections):
            data = connections.recv(2048)  # increase this size if needed to send more information
            reply = data.decode("utf-8")
 
+
            if not data:
                print("disconnected from client")
                break
@@ -46,5 +48,8 @@ def player_client(connections):
 
 while True:
     connections, address_client = sock.accept()
-    print("Connected to ", address_client)
+    print("Connected to ", address_client[0] + ':' + str(address_client[1]))
     start_new_thread(player_client, (connections,))
+    player_count+=1
+    print(" Player count:" + str(player_count))
+sock.close()
