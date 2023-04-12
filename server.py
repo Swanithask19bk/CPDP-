@@ -3,7 +3,7 @@ from _thread import *
 import sys
 
 # Server and Port Details
-server = "10.0.0.188"  # replace this with you local IP address.
+server = "10.136.226.70"  # replace this with you local IP address.
 port = 5555
 
 # Creating Socket
@@ -47,5 +47,4 @@ def player_client(connections):
 while True:
     connections, address_client = sock.accept()
     print("Connected to ", address_client)
-
     start_new_thread(player_client, (connections,))
